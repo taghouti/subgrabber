@@ -1,0 +1,6 @@
+#!/bin/sh
+chmod 777 /usr/share/applications/subgrabber.py
+if [ -f /usr/bin/subgrabber ]; then
+	rm /usr/bin/subgrabber
+fi
+ln -s /usr/share/applications/subgrabber.py /usr/bin/subgrabber

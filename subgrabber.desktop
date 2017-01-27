@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=subgrabber
+Comment=Simple GUI subtitle finder
+Exec=/usr/share/applications/subgrabber.py
+Icon=/usr/share/subgrabber/subgrabber-icon.png
+Categories=Multimedia;AudioVideo;Video;
+Terminal=false
+StartupNotify=false

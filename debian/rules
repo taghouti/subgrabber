@@ -1,0 +1,57 @@
+#!/usr/bin/make -f
+
+icon = $(CURDIR)/subgrabber-icon.png
+script = $(CURDIR)/subgrabber.py
+launcher = $(CURDIR)/subgrabber.desktop
+
+DEST1 = $(CURDIR)/debian/subgrabber/usr/share/subgrabber
+DEST2 = $(CURDIR)/debian/subgrabber/usr/share/applications
+
+build: build-stamp
+
+build-stamp:
+	dh_testdir
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	dh_clean
+
+install: build clean $(icon) $(script) $(launcher)
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	mkdir -m 755 -p $(DEST1)
+	mkdir -m 755 -p $(DEST2)
+
+	install -m 666 $(icon) $(DEST1)
+	install -m 777 $(script) $(DEST2)
+	install -m 777 $(launcher) $(DEST2)
+
+	ln -s /usr/share/applications/subgrabber.py /usr/bin/subgrabber
+	ln -s /usr/share/applications/subgrabber.py /bin/subgrabber
+
+
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_installexamples
+	dh_installman
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

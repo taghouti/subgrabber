@@ -1,0 +1,18 @@
+Source: subgrabber
+Section: video
+Priority: optional
+Maintainer: Taghouti Tarek <taghoutitarek@gmail.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.8
+Homepage: https://github.com/taghouti/subgrabber
+#Vcs-Git: git://anonscm.debian.org/collab-maint/subgrabber.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/subgrabber.git
+
+Package: subgrabber
+Architecture: any
+Depends: python
+Description: This application will make it easy to search for any subtitle in 
+ any language for your movies and download them directly to your computer, 
+ subtitles could be found with the IMDB tt code or the movie name, 
+ you can even select any movie file and subGrabber will calculate 
+ the file hash and find the subtitles relatet to it.

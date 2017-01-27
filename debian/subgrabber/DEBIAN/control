@@ -1,0 +1,14 @@
+Package: subgrabber
+Version: 1.0-1
+Architecture: amd64
+Maintainer: Taghouti Tarek <taghoutitarek@gmail.com>
+Installed-Size: 42
+Depends: python
+Section: video
+Priority: optional
+Homepage: https://github.com/taghouti/subgrabber
+Description: This application will make it easy to search for any subtitle in
+ any language for your movies and download them directly to your computer,
+ subtitles could be found with the IMDB tt code or the movie name,
+ you can even select any movie file and subGrabber will calculate
+ the file hash and find the subtitles relatet to it.
